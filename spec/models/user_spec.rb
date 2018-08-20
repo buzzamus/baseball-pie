@@ -42,6 +42,22 @@ RSpec.describe User, type: :model do
       user.email = "#{long_strong}@aaaa.com"
       expect(user).to_not be_valid
     end
+
+    it 'should be in the correct format' do
+      valid_emails = %w[user@example.com john@gmail.com j.jameson@yahoo.com john+smith@co.uk.org]
+      valid_emails.each do |email|
+        user.email = email
+        expect(user).to be_valid
+      end
+    end
+
+    it 'should not accept invalid formats' do
+      invalid_emails = %w[.com@com j:john@where v@yocom .@.com]
+      invalid_emails.each do |email|
+        user.email = email
+        expect(user).to_not be_valid
+      end
+    end
   end
 
 end
