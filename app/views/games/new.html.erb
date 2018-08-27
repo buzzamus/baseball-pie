@@ -1,0 +1,6 @@
+<h1>Upload New File</h1>
+
+<%= form_tag import_files_path, multipart: true do %>
+  <%= f.file_field :title %>
+  <%= f.submit %>
+<% end %>
