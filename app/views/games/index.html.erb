@@ -1,8 +1,15 @@
 <h1>All Files</h1>
 
-<% @games.each do |game| %>
-<p>game.year</p>
-<% end %>
+<h3>Wrigley Home Run Totals by Team</h3>
+
+<%= pie_chart Game.group(:away_team).sum(:away_homeruns) %>
+
+<!-- <% @games.each do |game| %>
+<p><%= game.park %></p>
+<p>Home Team: <%= game.home_team %></p>
+<p>Away Team: <%= game.away_team %></p>
+<p>---------------</p>
+<% end %> -->
 
 <h3>Upload New File</h3>
 <%= form_tag import_games_path, multipart: true do %>

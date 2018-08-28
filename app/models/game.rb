@@ -2,8 +2,11 @@ class Game < ApplicationRecord
   require 'csv'
   require 'activerecord-import/base'
 def self.import(file)
-  CSV.foreach(file.path, headers: true) do |row|
-    Season.create! row.to_h
+  CSV.foreach(file.path, headers: true) do |line|
+    if line[6] == "CHN"
+    Game.create(park: line[6], home_team: "Chicago National", away_team: "#{line[3]} #{line[4]}", home_homeruns: line[53], away_homeruns: line[25], total_homeruns: (line[53] + line[3]))
+    end
+    # do a case statement to translate each team name, park
   end
 end
 

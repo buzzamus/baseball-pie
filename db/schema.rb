@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2018_08_20_212011) do
     t.string "home_team"
     t.string "away_team"
     t.string "park"
-    t.string "homeruns"
+    t.string "home_homeruns"
+    t.string "away_homeruns"
+    t.string "total_homeruns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

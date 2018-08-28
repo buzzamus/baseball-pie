@@ -6,8 +6,8 @@ class GamesController < ApplicationController
 
   def import
     #@season = Season.new(season_params)
-    Season.import(params[:file])
-    redirect_to seasons_path, notice: "File added successfully"
+    Game.import(params[:file])
+    redirect_to games_path, notice: "File added successfully"
   end
 
   def season_params
