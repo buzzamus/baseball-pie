@@ -60,4 +60,24 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe 'password' do
+    let(:user2) { User.new(username: "big-dawg", email: "big-dawg@dawghouse.com", password: "password", password_confirmation: "password") }
+    it 'should be present' do
+      user2.password = " "
+      user2.password_confirmation = " "
+      expect(user2).to_not be_valid
+    end
+
+    it 'should not be too long' do
+      user2.password = "a" * 17
+      user2.password_confirmation = "a" * 17
+      expect(user2).to_not be_valid
+    end
+
+    it 'should match password confirmation' do
+      user2.password = "password"
+      user2.password_confirmation = "different"
+      expect(user2).to_not be_valid
+    end
+  end
 end

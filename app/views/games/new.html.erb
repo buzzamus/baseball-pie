@@ -1,6 +1,10 @@
-<h1>Upload New File</h1>
+<h1 class="center">Upload New Sheet</h1>
 
-<%= form_tag import_files_path, multipart: true do %>
-  <%= f.file_field :title %>
-  <%= f.submit %>
-<% end %>
+<div class="upload-form center">
+
+  <h3>Upload New File</h3>
+  <%= form_tag import_games_path, multipart: true do %>
+    <p><%= file_field_tag :file, class: "upload-btn" %></p>
+    <%= submit_tag "Upload File", class: "submit-btn" %>
+  <% end %>
+</div>
