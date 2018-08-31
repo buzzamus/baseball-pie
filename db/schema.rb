@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_104806) do
+ActiveRecord::Schema.define(version: 2018_08_31_110427) do
 
   create_table "games", force: :cascade do |t|
     t.string "year"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_08_31_104806) do
     t.string "total_homeruns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "seasons_id"
   end
 
   create_table "seasons", force: :cascade do |t|

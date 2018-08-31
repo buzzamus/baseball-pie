@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
   require 'csv'
   require 'activerecord-import/base'
+  belongs_to :season
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |line|
       year = line[0]
@@ -10,7 +11,6 @@ class Game < ApplicationRecord
       # do a case statement to translate each team name, park
     end
   end
-  #scope :year, -> (year) { where year: year }
 end
 
 #   def set_homeruns(arg)
