@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/home', to: 'pages#home'
   resources :users
+  resources :seasons
   resources :games do
     collection { post :import }
   end

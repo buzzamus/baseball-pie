@@ -15,6 +15,8 @@ class GamesController < ApplicationController
   end
 
   def import
+    # need to make this conditional
+    # @season = Season.create(year: "2016")
     Game.import(params[:file])
     redirect_to games_path, notice: "File added successfully"
   end
@@ -25,6 +27,6 @@ class GamesController < ApplicationController
   private
 
   def season_params
-    params.require(:season)
+    params.require(:season).permit(:year)
   end
 end
