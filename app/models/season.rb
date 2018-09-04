@@ -1,6 +1,6 @@
 class Season < ApplicationRecord
   validates :year, presence: true, length: { is: 4 },
-            uniqueness: { case_sensitive: false }
+            uniqueness: true
   has_many :games
 
 end
