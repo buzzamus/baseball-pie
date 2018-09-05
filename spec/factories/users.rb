@@ -7,6 +7,6 @@ FactoryBot.define do
     email { generate(:email) }
     password 'password'
     password_confirmation 'password'
-    timestamps "MyString"
+    timestamps 'MyString'
   end
 end

@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should not be over 80 characters' do
-      long_strong = "a" * 75
+      long_strong = 'a' * 75
       user.email = "#{long_strong}@aaaa.com"
       expect(user).to_not be_valid
     end
@@ -61,22 +61,24 @@ RSpec.describe User, type: :model do
   end
 
   describe 'password' do
-    let(:user2) { User.new(username: "big-dawg", email: "big-dawg@dawghouse.com", password: "password", password_confirmation: "password") }
+    let(:user2) { User.new(username: 'big-dawg', email: 'big-dawg@dawghouse.com',
+                           password: 'password', password_confirmation: 'password')
+                }
     it 'should be present' do
-      user2.password = " "
-      user2.password_confirmation = " "
+      user2.password = ' '
+      user2.password_confirmation = ' '
       expect(user2).to_not be_valid
     end
 
     it 'should not be too long' do
-      user2.password = "a" * 17
-      user2.password_confirmation = "a" * 17
+      user2.password = 'a' * 17
+      user2.password_confirmation = 'a' * 17
       expect(user2).to_not be_valid
     end
 
     it 'should match password confirmation' do
-      user2.password = "password"
-      user2.password_confirmation = "different"
+      user2.password = 'password'
+      user2.password_confirmation = 'different'
       expect(user2).to_not be_valid
     end
   end

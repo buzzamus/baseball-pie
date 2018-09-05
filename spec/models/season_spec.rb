@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Season, type: :model do
-  let(:season) { Season.new(year: "2015") }
+  let(:season) { Season.new(year: '2015') }
 
   describe 'validations' do
     it { should validate_presence_of(:year) }
@@ -25,7 +25,7 @@ RSpec.describe Season, type: :model do
     end
 
     it 'should have a length of exactly 4' do
-      season.year = "1111"
+      season.year = '1111'
       expect(season).to be_valid
     end
   end

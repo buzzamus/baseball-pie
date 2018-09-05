@@ -1,8 +1,8 @@
 <h1 class="center">All Files</h1>
 
-  <h3 class="center">Wrigley Home Run Totals by Away Team</h3>
+  <h3 class="center">Away Team Wrigley Home Run Totals</h3>
   <%= pie_chart @games.group(:away_team).sum(:away_homeruns) %>
-  <h3 class="center">Cubs Wrigley Home Run Totals by Away Team</h3>
+  <h3 class="center">Cubs Wrigley Home Run Totals Per Opponent</h3>
   <%= pie_chart @games.group(:away_team).sum(:home_homeruns) %>
 
 <!-- <% @games.each do |game| %>
