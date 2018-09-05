@@ -1,4 +1,4 @@
-<h1 class="center">All Files</h1>
+<h1 class="center">All Games</h1>
 
   <h3 class="center">Away Team Wrigley Home Run Totals</h3>
   <%= pie_chart @games.group(:away_team).sum(:away_homeruns) %>
@@ -11,3 +11,8 @@
 <p>Away Team: <%= game.away_team %></p>
 <p>---------------</p>
 <% end %> -->
+
+<!-- !!!!!!!!! -->
+<!-- for each individual season try:
+
+@season.where(year: '2016').group(:away_team).sum(:away_homeruns) -->
