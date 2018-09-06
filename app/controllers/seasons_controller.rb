@@ -9,6 +9,11 @@ class SeasonsController < ApplicationController
 
   def create
     @season = Season.new(season_params)
+    if @season.save
+      redirect_to seasons_path
+    else
+      render 'new'
+    end
   end
 
   def show

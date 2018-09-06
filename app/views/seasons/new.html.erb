@@ -1,0 +1,10 @@
+<h1 class="center">Upload New Sheet</h1>
+
+<div class="center">
+<%= form_for(@season, html: { role: "form"}) do |f| %>
+  <p><%= f.label :year %></p>
+  <p><%= f.text_field :year %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+</div>

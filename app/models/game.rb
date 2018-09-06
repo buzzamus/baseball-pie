@@ -16,8 +16,3 @@ class Game < ApplicationRecord
     end
   end
 end
-
-#   def set_homeruns(arg)
-#     self.homeruns += arg
-#   end
-# end

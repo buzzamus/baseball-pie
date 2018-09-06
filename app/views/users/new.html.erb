@@ -1,0 +1,16 @@
+<h1 class="center">Create Your User</h1>
+<%= form_for(@user, html: {class: "center", role: "form"}) do |f| %>
+  <p><%= f.label :username %></p>
+  <p><%= f.text_field :username %></p>
+
+  <p><%= f.label :email %></p>
+  <p><%= f.text_field :email %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.text_field :password %></p>
+
+  <p><%= f.label :password_confirmation %></p>
+  <p><%= f.text_field :password_confirmation %></p>
+
+  <p><%= f.submit %></p>
+<% end %>
