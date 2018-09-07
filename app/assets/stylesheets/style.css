@@ -2,6 +2,10 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: Arial, sans-serif, serif;
 }
 
+h1 {
+  font-size: 3em;
+}
+
 .center {
   text-align: center;
 }

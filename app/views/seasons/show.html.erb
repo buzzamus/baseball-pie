@@ -1,6 +1,11 @@
 <h1 class="center"><%= @season.year %></h1>
 
-<h3 class="center">Away Team Wrigley Home Run Totals</h3>
+<!-- make a bunch of partials for different graphs -->
+
+<h3 class="center">Team Home Run Totals Against Cubs</h3>
 <%= pie_chart @season.games.group(:away_team).sum(:away_homeruns) %>
-<h3 class="center">Cubs Wrigley Home Run Totals Per Opponent</h3>
+<h3 class="center">Cubs Home Run Totals Per Opponent</h3>
 <%= pie_chart @season.games.group(:away_team).sum(:home_homeruns) %>
+
+<h3 class="center">Cubs Home Run Totals Per Month</h3>
+<%= pie_chart @season.games.group(:month).sum(:home_homeruns) %>

@@ -10,7 +10,9 @@ class GamesController < ApplicationController
     redirect_to games_path, notice: 'File added successfully'
   end
 
-  def show; end
+  def show
+    @game = Game.find(params[:id])
+  end
 
   private
 

@@ -1,5 +1,7 @@
-<h1>Seasons</h1>
+<h1 class="center">Seasons</h1>
 
-<% @seasons.each do |season| %>
-  <p><%= link_to "#{season.year}", season_path(season) %></p>
-<% end %>
+<div class="center">
+  <% @seasons.each do |season| %>
+    <p><%= link_to "#{season.year}", season_path(season) %></p>
+  <% end %>
+</div>
