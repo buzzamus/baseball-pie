@@ -1,4 +1,6 @@
-# README
+# Baseball Pie
+
+...currently a jumbled mess, so don't read me..yet!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
