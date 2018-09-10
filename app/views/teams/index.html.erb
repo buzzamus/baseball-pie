@@ -1,0 +1,6 @@
+<h1 class="center">All Teams</h1>
+  <ol>
+    <% @teams.each do |team| %>
+      <li><%= team.city %> <%= team.league %></li>
+    <% end %>
+  </ol>
