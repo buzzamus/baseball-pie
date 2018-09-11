@@ -16,6 +16,13 @@ class TeamsController < ApplicationController
     end
   end
 
+  def show
+    @team = Team.find(params[:id])
+    @games = Game.all
+    @home_games = @games.where(home_team: "#{@team.sheet_key}")
+    @away_games = @games.where(away_team: "#{@team.sheet_key}")
+  end
+
   private
 
   def team_params
