@@ -2,7 +2,8 @@
 
 <h3 class="center">Home Runs by visiting teams at <%= "#{@team.park}" %></h3>
 <%= pie_chart @home_games.group(:away_team).sum(:away_homeruns) %>
-<h4><%= "#{@team.city} " "#{@team.league}" %>Home Run Total at Home: <%= @home_hr_total %> --need to get this!!!</h4>
+<h4><%= "#{@team.city} " "#{@team.league}" %> Home Run Total at Home: <%= @home_games.sum(:home_homeruns) %></h4>
+<h4>Total Home Runs by Visiting Teams at <%+ "#{@team.park}" %>: <%= @home_games.sum(:away_homeruns) %></h4>
 
 <h3 class="center"><%= "#{@team.city} " "#{@team.league}" %> Home Runs by Park (excluding home)</h3>
 <%= pie_chart @away_games.group(:home_team).sum(:away_homeruns) %>
