@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_09_10_114241) do
 
   create_table "games", force: :cascade do |t|
-    t.string "game_year"
+    t.string "year"
     t.string "day"
     t.string "day_of_week"
     t.string "month"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_114241) do
     t.string "total_homeruns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "season_id"
+    t.integer "seasons_id"
   end
 
   create_table "games_teams", id: false, force: :cascade do |t|
@@ -40,10 +40,9 @@ ActiveRecord::Schema.define(version: 2018_09_10_114241) do
   end
 
   create_table "teams", force: :cascade do |t|
+    t.string "name"
     t.string "league"
     t.string "city"
-    t.string "park"
-    t.string "sheet_key"
   end
 
   create_table "users", force: :cascade do |t|
