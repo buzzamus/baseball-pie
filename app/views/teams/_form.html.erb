@@ -1,0 +1,17 @@
+<div class="center">
+  <%= form_for(@team, html: { role: "form"} ) do |f| %>
+    <p><%= f.label :league %></p>
+    <p><%= f.text_field :league %></p>
+
+    <p><%= f.label :city %></p>
+    <p><%= f.text_field :city %></p>
+
+    <p><%= f.label :park %></p>
+    <p><%= f.text_field :park %></p>
+
+    <p><%= f.label :sheet_key %></p>
+    <p><%= f.text_field :sheet_key %></p>
+
+    <%= f.submit %>
+  <% end %>
+</div>
