@@ -17,7 +17,7 @@ class Game < ApplicationRecord
           away_team: Team.where(sheet_key: line[3]).first_or_create(league: line[4], sheet_key: line[3], city: self.city_adder(line[3].to_sym)).sheet_key,
           home_homeruns: line[53],
           away_homeruns: line[25],
-          total_homeruns: (line[53] + line[3]),
+          total_homeruns: (line[53].to_i + line[25].to_i).to_s,
           day_of_week: line[2],
           month: month_names[(date[(4..5)].to_i - 1)],
           season: Season.where(year: date[(0..3)]).first

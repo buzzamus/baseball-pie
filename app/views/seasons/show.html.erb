@@ -7,5 +7,14 @@
 <h3 class="center">Home team home run totals by Park</h3>
 <%= pie_chart @season.games.group(:away_team).sum(:home_homeruns) %>
 
-<h3 class="center">Home Runs by Month</h3>
+<h3 class="center">Total Homeruns by Year</h3>
+<%= pie_chart @season.games.group(:game_year).sum(:total_homeruns) %>
+
+<h3 class="center">Home Team Homeruns by Month</h3>
 <%= pie_chart @season.games.group(:month).sum(:home_homeruns) %>
+
+<h3 class="center">Away Team Homeruns by Month</h3>
+<%= pie_chart @season.games.group(:month).sum(:away_homeruns) %>
+
+<h3 class="center">Total Homeruns by Month</h3>
+<%= pie_chart @season.games.group(:month).sum(:total_homeruns) %>
