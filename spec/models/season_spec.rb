@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Season, type: :model do
-  let(:season) { Season.new(year: '2015') }
+  let(:season) { FactoryBot.create(:season) }
+
+  it 'has a valid factory' do
+    expect(season).to be_valid
+  end
 
   describe 'validations' do
     it { should validate_presence_of(:year) }

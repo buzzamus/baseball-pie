@@ -1,6 +1,6 @@
 <h1 class="center">All Teams</h1>
-  <ol>
-    <% @teams.each do |team| %>
-      <li><%= link_to "#{team.sheet_key} - #{team.league}", team_path(team) %></li>
-    <% end %>
-  </ol>
+<ol>
+  <% @teams.each do |team| %>
+    <li><%= link_to "#{team.sheet_key} - #{team.league}", team_path(team) %></li>
+  <% end %>
+</ol>

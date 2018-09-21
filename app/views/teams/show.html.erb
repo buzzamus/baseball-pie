@@ -1,5 +1,7 @@
 <h1><%= @team.city %> - <%= @team.league %></h1>
 
+<!-- Need a filter by year in team view as it currently shows all data -->
+
 <h3 class="center">Home Runs by visiting teams at <%= "#{@team.sheet_key}" %></h3>
 <%= pie_chart @home_games.group(:away_team).sum(:away_homeruns) %>
 <h4><%= "#{@team.city} - " "#{@team.league}" %> Home Run Total at Home: <%= @home_games.sum(:home_homeruns) %></h4>

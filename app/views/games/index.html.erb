@@ -5,12 +5,8 @@
   <h3 class="center">Total Home Runs by Home Team</h3>
   <%= pie_chart @games.group(:home_team).sum(:home_homeruns) %>
 
-<!-- <% @games.each do |game| %>
-<p><%= game.park %></p>
-<p>Home Team: <%= game.home_team %></p>
-<p>Away Team: <%= game.away_team %></p>
-<p>---------------</p>
-<% end %> -->
+  <h3 class="center">Total Home Runs by Season</h3>
+  <%= pie_chart @games.group(:game_year).sum(:total_homeruns), donut: true %>
 
 <!-- !!!!!!!!! -->
 <!-- for each individual season try:

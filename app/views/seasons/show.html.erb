@@ -8,7 +8,7 @@
 <%= pie_chart @season.games.group(:away_team).sum(:home_homeruns) %>
 
 <h3 class="center">Total Homeruns by Year</h3>
-<%= pie_chart @season.games.group(:game_year).sum(:total_homeruns) %>
+<%= pie_chart @season.games.group(:game_year).sum(:total_homeruns), donut: true %>
 
 <h3 class="center">Home Team Homeruns by Month</h3>
 <%= pie_chart @season.games.group(:month).sum(:home_homeruns) %>

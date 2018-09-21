@@ -4,6 +4,15 @@ class Game < ApplicationRecord
   belongs_to :season
   has_and_belongs_to_many :teams
 
+  # One of the below validations causing issue w/ total hr number per season
+
+  validates :home_team, presence: true, length: { is: 3 }
+  validates :away_team, presence: true, length: { is: 3 }
+  validates :game_year, presence: true, length: { is: 4 }
+  validates :park, presence: true, length: { in: 1..70 }
+  validates :month, presence: true, length: { in: 3..10 }
+
+
   def self.import(file)
     month_names = ["January", "February", "March", "April",
                    "May", "June", "July", "August",

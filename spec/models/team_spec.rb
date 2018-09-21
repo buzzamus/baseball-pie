@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Team, type: :model do
+  let(:team) { FactoryBot.create(:team) }
+  
+  it 'has a valid factory' do
+    expect(team).to be_valid
+  end
+
   describe 'validations' do
     it { should validate_presence_of(:sheet_key) }
     it { should validate_length_of(:sheet_key).is_equal_to(3) }
