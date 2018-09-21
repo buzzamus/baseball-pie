@@ -26,7 +26,11 @@ class Game < ApplicationRecord
           away_team: Team.where(sheet_key: line[3]).first_or_create(league: line[4], sheet_key: line[3], city: self.city_adder(line[3].to_sym)).sheet_key,
           home_homeruns: line[53],
           away_homeruns: line[25],
+          home_score: line[10],
+          away_score: line[9],
           total_homeruns: (line[53].to_i + line[25].to_i).to_s,
+          winner: self.winning_team(line[6], line[3], line[10], line[9]),
+          loser: self.losing_team(line[6], line[3], line[10], line[9]),
           day_of_week: line[2],
           month: month_names[(date[(4..5)].to_i - 1)],
           season: Season.where(year: date[(0..3)]).first
@@ -35,6 +39,22 @@ class Game < ApplicationRecord
   end
 
   private
+  # refactor this
+  def self.winning_team(home_team, away_team, home_runs, away_runs)
+    if home_runs > away_runs
+      home_team
+    else
+      away_team
+    end
+  end
+
+  def self.losing_team(home_team, away_team, home_runs, away_runs)
+    if home_runs < away_runs
+      home_team
+    else
+      away_team
+    end
+  end
   # need to add previous team names (such as Florida Marlins) for older seasons
   def self.city_adder(arg)
     cities = {

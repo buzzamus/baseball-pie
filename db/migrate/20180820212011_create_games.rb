@@ -10,6 +10,10 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :park
       t.string :home_homeruns
       t.string :away_homeruns
+      t.string :home_score
+      t.string :away_score
+      t.string :winner
+      t.string :loser
       t.string :total_homeruns
       t.timestamps
     end
