@@ -13,3 +13,12 @@
 
 <h3 class="center"><%= "#{@team.sheet_key} - " "#{@team.league}" %> Home Runs by Park (excluding home)</h3>
 <%= pie_chart @away_games.group(:home_team).sum(:away_homeruns) %>
+
+<h3 class="center">Total Runs Scored</h3>
+<h4 class="center"><%= @team_runs %></h4>
+
+<h3 class="center">Total Runs Against</h3>
+<h4 class="center"><%= @runs_against %></h4>
+
+<h3 class="center">Run Differential</h3>
+<h4 class="center"><%= @team_runs - @runs_against %></h4>
