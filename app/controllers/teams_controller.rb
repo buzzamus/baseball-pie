@@ -19,6 +19,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @first_season = find_first_season
     @games = Game.all
     @home_games = @games.where(home_team: "#{@team.sheet_key}")
     @away_games = @games.where(away_team: "#{@team.sheet_key}")
@@ -44,5 +45,10 @@ class TeamsController < ApplicationController
 
   def set_team
     @team = Team.find(params[:id])
+  end
+
+  def find_first_season
+    seasons = Season.all
+    first_year = seasons.min_by(&:year).year
   end
 end

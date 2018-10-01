@@ -40,3 +40,13 @@ h1 {
 .upload-btn {
   margin-left: 13%;
 }
+
+.home-link {
+  font-size: 1.3em;
+  float: left;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  text-decoration: underline overline dotted blue;
+}

@@ -1,6 +1,7 @@
 <h1><%= @team.city %> - <%= @team.league %></h1>
 
 <!-- Need a filter by year in team view as it currently shows all data -->
+<h5 class="center">All Stats Include Data From <%= @first_season %></h5>
 <div class="center">
   <h3 class="center">Home Runs by visiting teams at <%= "#{@team.sheet_key}" %></h3>
   <%= pie_chart @home_games.group(:away_team).sum(:away_homeruns) %>
