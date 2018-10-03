@@ -21,6 +21,7 @@ class Game < ApplicationRecord
       date = line[0]
         @game = Game.create(
           game_year: date[(0..3)],
+          full_date: line[0],
           park: line[6],
           home_team: Team.where(sheet_key: line[6]).first_or_create(league: line[7], sheet_key: line[6], city: self.city_adder(line[6].to_sym)).sheet_key,
           away_team: Team.where(sheet_key: line[3]).first_or_create(league: line[4], sheet_key: line[3], city: self.city_adder(line[3].to_sym)).sheet_key,

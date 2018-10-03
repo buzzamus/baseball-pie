@@ -20,4 +20,4 @@
 <%= pie_chart @season.games.group(:month).sum(:total_homeruns) %>
 
 <h3 class="center">Home Runs Scored By Day of Week</h3>
-<h2 class="center">COMING SOON!!!!</h2>
+<%= pie_chart @season.games.group_by_day_of_week(:full_date, format: "%a").sum(:total_homeruns), donut: true %>

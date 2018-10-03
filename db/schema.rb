@@ -12,35 +12,39 @@
 
 ActiveRecord::Schema.define(version: 2018_09_10_114241) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "games", force: :cascade do |t|
-    t.string "game_year"
+    t.integer "game_year"
+    t.string "full_date"
     t.string "day"
     t.string "day_of_week"
     t.string "month"
     t.string "home_team"
     t.string "away_team"
     t.string "park"
-    t.string "home_homeruns"
-    t.string "away_homeruns"
-    t.string "home_score"
-    t.string "away_score"
+    t.integer "home_homeruns"
+    t.integer "away_homeruns"
+    t.integer "home_score"
+    t.integer "away_score"
     t.string "winner"
     t.string "loser"
-    t.string "total_homeruns"
+    t.integer "total_homeruns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "season_id"
   end
 
   create_table "games_teams", id: false, force: :cascade do |t|
-    t.integer "team_id", null: false
-    t.integer "game_id", null: false
+    t.bigint "team_id", null: false
+    t.bigint "game_id", null: false
     t.index ["game_id"], name: "index_games_teams_on_game_id"
     t.index ["team_id"], name: "index_games_teams_on_team_id"
   end
 
   create_table "seasons", force: :cascade do |t|
-    t.string "year"
+    t.integer "year"
   end
 
   create_table "teams", force: :cascade do |t|
