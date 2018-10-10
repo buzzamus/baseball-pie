@@ -8,6 +8,12 @@
   <h3 class="center">Total Home Runs by Season</h3>
   <%= pie_chart @games.group(:game_year).sum(:total_homeruns), donut: true %>
 
+  <h3 class="center">Total Home Runs by Month</h3>
+  <%= pie_chart @games.group(:month).sum(:total_homeruns), donut: true %>
+
+  <h3 class="center">Home Runs Scored By Day of Week</h3>
+  <%= pie_chart @games.group_by_day_of_week(:full_date, format: "%a").sum(:total_homeruns), donut: true %>
+
 <!-- !!!!!!!!! -->
 <!-- for each individual season try:
 

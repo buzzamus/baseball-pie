@@ -7,7 +7,6 @@
   <%= pie_chart @home_games.group(:away_team).sum(:away_homeruns) %>
   <h4><%= "#{@team.city} - " "#{@team.league}" %> Home Run Total at Home: <%= @home_games.sum(:home_homeruns) %></h4>
   <h4><%= "#{@team.city} - " "#{@team.league}" %> Home Run Total away: <%= @away_games.sum(:away_homeruns) %></h4>
-  <h4><%= "#{@team.city} - " "#{@team.league} " %>Record: <%= @games.where(winner: "#{@team.sheet_key}").count %> - <%= @games.where(loser: "#{@team.sheet_key}").count %></h4>
   <h4>Total Home Runs by Visiting Teams at <%= "#{@team.sheet_key} - " %> <%= @home_games.sum(:away_homeruns) %></h4>
 </div>
 
