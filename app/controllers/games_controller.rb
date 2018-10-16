@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :require_user, only: [:import, :new]
   def index
     @games = Game.all
   end

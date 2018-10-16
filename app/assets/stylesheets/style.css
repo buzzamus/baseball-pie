@@ -63,3 +63,29 @@ h1 {
   border: 2px solid #00e9ff;
   background-size: cover;
 }
+
+.user-div {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #69AEE8;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-div {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #69AEE8;
+  width: 98%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.current-user {
+  color: #b20e34;
+  font-weight: bolder;
+}
+
+.top-margin {
+  margin-top: 10px;
+}

@@ -1,11 +1,11 @@
-<P class="center">
+<P class="center nav-div">
   <%= link_to "baseballpie.com", root_path, class: "home-link" %>
   <%= link_to "All Seasons", seasons_path %> |
   <%= link_to "All Games", games_path %> |
   <%= link_to "All Teams", teams_path %>
 </p>
   <% if logged_in? %>
-  <p class="center"> Admin Tools for <%= current_user.username %>
+  <p class="center nav-div top-margin"> Admin Tools for <span class="current-user"><%= current_user.username %></span>
     | <%= link_to "Upload", new_game_path %>
     | <%= link_to "Create New Team", new_team_path %>
     | <%= link_to "All Users", users_path %>

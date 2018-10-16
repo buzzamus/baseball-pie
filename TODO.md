@@ -8,7 +8,7 @@
 
 # Additions
 
-* add user login, permissions
+* add user permissions
 
 * create separate branch, associate seasons to teams
 

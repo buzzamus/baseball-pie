@@ -1,4 +1,5 @@
 class SeasonsController < ApplicationController
+  before_action :require_user, only: [:new, :created]
   def index
     @seasons = Season.all
   end

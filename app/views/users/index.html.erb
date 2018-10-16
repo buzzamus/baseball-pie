@@ -1,9 +1,8 @@
 <h1>Users</h1>
 
 <% @users.each do |user| %>
-  <p><%= user.username %></p>
+  <div class="center user-div">
+    <h3><%= user.username %></h3>
+    <p><%= user.email %></p>
+  </div>
 <% end %>
-
-<p>Count: <%= @users.count %></h1>
-
-<%= bar_chart @users.top(:created_at, 10) %>

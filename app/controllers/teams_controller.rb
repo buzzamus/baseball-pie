@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :require_user, only: [:new, :create, :edit, :update]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
   def index
     @teams = Team.all
@@ -33,6 +34,7 @@ class TeamsController < ApplicationController
       redirect_to team_path(@team)
     else
       render 'edit'
+      puts @team.errors.messages
     end
   end
 

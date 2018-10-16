@@ -16,7 +16,10 @@
 <h3 class="center">Away Team Homeruns by Month</h3>
 <%= pie_chart @season.games.group(:month).sum(:away_homeruns) %>
 
-<h3 class="center">Total Homeruns by Month</h3>
+<h3 class="center">Total Homeruns by Park --fact check this -----</h3>
+<%= pie_chart @games.group(:park).sum(:total_homeruns) %>
+
+<h3 class="center">Total Homeruns by Month  ----fact check this</h3>
 <%= pie_chart @season.games.group(:month).sum(:total_homeruns) %>
 
 <h3 class="center">Home Runs Scored By Day of Week</h3>
