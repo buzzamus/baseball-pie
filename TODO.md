@@ -6,6 +6,8 @@
 
 * figure out why run differential not exact
 
+* fix nav bar to not look like shit on mobile view
+
 # Additions
 
 * add user permissions

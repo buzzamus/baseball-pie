@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !logged_in?
-      @message = "You do not have permission for that action"
+      flash[:error] = "You do not have permission for that action"
       redirect_to root_path
     end
   end
