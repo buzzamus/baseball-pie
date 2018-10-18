@@ -73,6 +73,10 @@ h1 {
   margin-top: 15px;
 }
 
+.center-list {
+  list-style-position: inside;
+}
+
 .nav-div {
   border: 2px solid black;
   border-radius: 10px;

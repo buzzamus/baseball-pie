@@ -5,3 +5,9 @@
     <p><%= link_to "#{season.year}", season_path(season) %></p>
   <% end %>
 </div>
+
+<div class="center">
+
+    <!-- can uncomment and add irb syntax below after adding games to season association  -->
+    <!--  pie_chart @seasons.games.group(:year).sum(:total_homeruns), donut: true  -->
+</div>
