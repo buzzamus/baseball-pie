@@ -34,7 +34,7 @@ class Game < ApplicationRecord
           loser: self.losing_team(line[6], line[3], line[10], line[9]),
           day_of_week: line[2],
           month: month_names[(date[(4..5)].to_i - 1)],
-          season: Season.where(year: date[(0..3)]).first
+          season: Season.where(year: date[(0..3)]).first_or_create(year: date[(0..3)])
         )
     end
   end
@@ -88,7 +88,8 @@ class Game < ApplicationRecord
       NYA: "New York",
       HOU: "Houston",
       MIA: "Miami",
-      DET: "Detroit"
+      DET: "Detroit",
+      FLO: "Florida"
     }
     return cities[arg]
   end

@@ -6,6 +6,7 @@ class SeasonsController < ApplicationController
 
   def new
     @season = Season.new
+    @games = Game.all
   end
 
   def create
