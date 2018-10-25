@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.create(:user) }
-  
+
   it 'has a valid factory' do
     expect(user).to be_valid
   end
@@ -45,7 +45,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'should be in the correct format' do
-      valid_emails = %w[user@example.com john@gmail.com j.jameson@yahoo.com john+smith@co.uk.org]
+      valid_emails = %w[user@example.com john@gmail.com
+                        j.jameson@yahoo.com john+smith@co.uk.org]
       valid_emails.each do |email|
         user.email = email
         expect(user).to be_valid
@@ -62,9 +63,14 @@ RSpec.describe User, type: :model do
   end
 
   describe 'password' do
-    let(:user2) { User.new(username: 'big-dawg', email: 'big-dawg@dawghouse.com',
-                           password: 'password', password_confirmation: 'password')
-                }
+    let(:user2) do
+      User.new(
+        username: 'big-dawg',
+        email: 'big-dawg@dawghouse.com',
+        password: 'password',
+        password_confirmation: 'password'
+      )
+    end
     it 'should be present' do
       user2.password = ' '
       user2.password_confirmation = ' '

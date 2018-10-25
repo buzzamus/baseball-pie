@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Team, type: :model do
   let(:team) { FactoryBot.create(:team) }
-  
+
   it 'has a valid factory' do
     expect(team).to be_valid
   end
@@ -20,7 +20,7 @@ RSpec.describe Team, type: :model do
   end
 
   describe 'team city' do
-    let(:team2) { Team.new(sheet_key: "MIA", league: "NL") }
+    let(:team2) { Team.new(sheet_key: 'MIA', league: 'NL') }
 
     it 'should accept a blank value' do
       expect(team2).to be_valid
@@ -28,7 +28,7 @@ RSpec.describe Team, type: :model do
   end
 
   describe 'team ballpark' do
-    let(:team3) { Team.new(sheet_key: "NYA", league: "AL", city: "New York") }
+    let(:team3) { Team.new(sheet_key: 'NYA', league: 'AL', city: 'New York') }
     it 'should accept a blank value' do
       expect(team3).to be_valid
     end

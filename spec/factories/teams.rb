@@ -3,6 +3,6 @@ FactoryBot.define do
     league { 'NL' }
     city { 'Chicago' }
     park { 'Wrigley Field' }
-    sheet_key  { 'CHN' }
+    sheet_key { 'CHN' }
   end
 end

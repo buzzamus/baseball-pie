@@ -23,8 +23,12 @@ class TeamsController < ApplicationController
     @games = Game.all
     @home_games = @games.where(home_team: "#{@team.sheet_key}")
     @away_games = @games.where(away_team: "#{@team.sheet_key}")
-    @team_runs = @games.where(home_team: "#{@team.sheet_key}").sum(:home_score).to_i + @games.where(away_team: "#{@team.sheet_key}").sum(:away_score).to_i
-    @runs_against = @games.where(home_team: "#{@team.sheet_key}").sum(:away_score).to_i + @games.where(away_team: "#{@team.sheet_key}").sum(:home_score).to_i
+    @team_runs = @games.where(home_team: "#{@team.sheet_key}")
+                       .sum(:home_score).to_i + @games.where(away_team: "#{@team.sheet_key}")
+                                                      .sum(:away_score).to_i
+    @runs_against = @games.where(home_team: "#{@team.sheet_key}").sum(:away_score)
+                          .to_i + @games.where(away_team: "#{@team.sheet_key}")
+                          .sum(:home_score).to_i
   end
 
   def edit; end
@@ -50,6 +54,6 @@ class TeamsController < ApplicationController
 
   def find_first_season
     seasons = Season.all
-    first_year = seasons.min_by(&:year).year
+    seasons.min_by(&:year).year
   end
 end

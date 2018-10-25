@@ -12,9 +12,9 @@ RSpec.describe 'import' do
       expect(date[0..3]).to eq('2016')
     end
     it 'should create the correct month name' do
-      month_names = ['January', 'February', 'March', 'April',
-                     'May', 'June', 'July', 'August',
-                     'September', 'October', 'November', 'December']
+      month_names = %w[January February March April
+                       May June July 'August
+                       September October November December]
       adjusted_month = month_names[(date[(4..5)].to_i - 1)]
       expect(adjusted_month).to eq('April')
     end
