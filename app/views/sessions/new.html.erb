@@ -3,11 +3,11 @@
 <div class="center">
   <%= form_for(:session, html: { role: "form"}, url: login_path) do |f| %>
     <%= f.label :email %>
-    <%= f.email_field :email, placeholder: "email" %>
+    <%= f.email_field :email, placeholder: "email", class: "form-input" %>
 
     <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "password" %>
+    <%= f.password_field :password, placeholder: "password", class: "form-input" %>
 
-    <%= f.submit "Log Into Your Account" %>
+    <%= f.submit "Login", class: "submit-btn" %>
   <% end %>
 </div>

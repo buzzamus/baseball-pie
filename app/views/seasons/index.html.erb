@@ -2,7 +2,7 @@
 
 <div class="center">
   <% @seasons.each do |season| %>
-    <p><%= link_to "#{season.year}", season_path(season) %></p>
+    <%= link_to "#{season.year}", season_path(season), class: "nav-link index-links" %>
   <% end %>
 </div>
 

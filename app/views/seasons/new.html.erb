@@ -2,9 +2,9 @@
 
 <div class="center">
 <%= form_for(@season, html: { role: "form"}) do |f| %>
-  <p><%= f.label :year %></p>
-  <p><%= f.text_field :year %></p>
-  <p><%= f.submit %></p>
+  <%= f.label :year %>
+  <%= f.text_field :year, class: "form-input" %>
+  <%= f.submit class: "submit-btn" %>
 <% end %>
 
 </div>

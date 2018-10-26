@@ -1,17 +1,17 @@
 <div class="center">
   <%= form_for(@team, html: { role: "form"} ) do |f| %>
-    <p><%= f.label :league %></p>
-    <p><%= f.text_field :league %></p>
+    <%= f.label :league %>
+    <%= f.text_field :league, class: "form-input" %>
 
-    <p><%= f.label :city %></p>
-    <p><%= f.text_field :city %></p>
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-input" %>
 
-    <p><%= f.label :park %></p>
-    <p><%= f.text_field :park %></p>
+    <%= f.label :park %>
+    <%= f.text_field :park, class: "form-input" %>
 
-    <p><%= f.label :sheet_key %></p>
-    <p><%= f.text_field :sheet_key %></p>
+    <%= f.label :sheet_key %>
+    <%= f.text_field :sheet_key, class: "form-input" %>
 
-    <%= f.submit %>
+    <%= f.submit class: "submit-btn" %>
   <% end %>
 </div>

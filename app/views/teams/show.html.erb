@@ -1,5 +1,9 @@
 <h1><%= @team.city %> - <%= @team.league %></h1>
 
+<% if logged_in? %>
+  <%= link_to "Edit Team", edit_team_path(@team), class: "nav-link index-links" %>
+<% end %>
+
 <!-- Need a filter by year in team view as it currently shows all data -->
 <h5 class="center">All Stats Include Data From <%= @first_season %></h5>
 <div class="center">

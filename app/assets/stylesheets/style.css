@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, input, label {
   font-family: Arial, sans-serif, serif;
 }
 
@@ -42,13 +42,15 @@ h1 {
 }
 
 .home-link {
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-decoration: none;
   max-width: 50px;
+  color: black;
 }
 
 .home-link:hover {
   text-decoration: underline overline dotted blue;
+  color: #69AEE8;
 }
 
 .logo-div {
@@ -75,15 +77,30 @@ h1 {
   list-style-position: inside;
 }
 
+.form-input {
+  width: 300px;
+  height: 30px;
+  font-size: 1.4em;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .nav-link {
   text-decoration: none;
   border: 2px solid black;
   padding: 7px;
   border-radius: 8px;
+  background-color: #69AEE8;
 }
 
 .nav-link:hover {
-  border: 2px solid red;
+  background-color: #c44646;
 }
 
 .nav-div {
@@ -92,6 +109,7 @@ h1 {
   background-color: #69AEE8;
   width: 98%;
   padding: 10px;
+  padding-top: 20px;
   margin: 0 auto;
   height: 25px;
 }
@@ -105,6 +123,15 @@ h1 {
   font-weight: bolder;
 }
 
+.index-links {
+  margin-bottom: 10px;
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 .top-margin {
   margin-top: 10px;
 }
@@ -115,6 +142,10 @@ h1 {
   padding: 10px;
   color: #b20e34;
   margin: 0 auto;
+}
+
+.disclaimer {
+  padding: 10px;
 }
 
 .footer {
