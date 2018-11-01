@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   before_action :require_user, only: [:new, :create, :edit, :update]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :find_first_season, only: [:show]
   def index
     @teams = Team.all
   end
@@ -19,16 +20,9 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @first_season = find_first_season
     @games = Game.all
     @home_games = @games.where(home_team: "#{@team.sheet_key}")
     @away_games = @games.where(away_team: "#{@team.sheet_key}")
-    @team_runs = @games.where(home_team: "#{@team.sheet_key}")
-                       .sum(:home_score).to_i + @games.where(away_team: "#{@team.sheet_key}")
-                                                      .sum(:away_score).to_i
-    @runs_against = @games.where(home_team: "#{@team.sheet_key}").sum(:away_score)
-                          .to_i + @games.where(away_team: "#{@team.sheet_key}")
-                          .sum(:home_score).to_i
   end
 
   def edit; end
@@ -50,10 +44,5 @@ class TeamsController < ApplicationController
 
   def set_team
     @team = Team.find(params[:id])
-  end
-
-  def find_first_season
-    seasons = Season.all
-    seasons.min_by(&:year).year
   end
 end

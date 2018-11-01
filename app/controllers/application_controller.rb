@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def find_first_season
+    seasons = Season.all
+    @first_season = seasons.min_by(&:year).year
+  end
 end

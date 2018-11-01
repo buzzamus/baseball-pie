@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :require_user, only: [:import, :new]
+  before_action :find_first_season, only: [:index]
   def index
     @games = Game.all
   end
