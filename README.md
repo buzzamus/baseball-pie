@@ -1,26 +1,10 @@
 # Baseball Pie
 
-...currently a jumbled mess, so don't read me..yet!
+A Rails App For Uploading Retrosheet text files, parsing the desired data, and then presented in pie chart form.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* System dependencies:
+  * chartkick gem - used to create charts
+  * hightop gem - used to support chartkick gem
+  * groupdate gem - used to make working with dates easier
+  * postgres gem - especially necessary for timestamp handling in order to sort data out by day of week
+  * tests written using rspec

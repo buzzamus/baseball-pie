@@ -1,4 +1,4 @@
-<h1><%= @team.city %> - <%= @team.league %></h1>
+<h1 class="center"><%= @team.city %> - <%= @team.league %></h1>
 
 <% if logged_in? %>
   <%= link_to "Edit Team", edit_team_path(@team), class: "nav-link index-links" %>
