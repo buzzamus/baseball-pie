@@ -18,6 +18,6 @@
 
 ## Refactors
 
-* Create partials to adress DRY code
+* Create partials to address DRY code
 
 * Create helpers and move various queries in controllers to helpers
