@@ -26,7 +26,7 @@ RSpec.describe 'import' do
     # there are 30 lines (each representing each team's total home run total)
     # The total of 5610 has been fact checked to verify that is the correct number of homeruns in MLB for 2016
     # This number was then checked against the numbers returned within live run of upload for 2016 retrosheet
-    let(:file_path) { "tmp/homers.txt"}
+    let(:file_path) { "tmp/homers.txt" }
     team_counter = 0
     hr_num = 0
     let!(:csv) do
